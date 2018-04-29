@@ -1,7 +1,18 @@
-import { h, Component } from 'preact';
+import { h, Component, RenderableProps } from 'preact';
 import style from './style';
 
-export default class Profile extends Component {
+export interface ProfileProps {
+	user?: string;
+}
+
+export interface ProfileState {
+	time: number;
+	count: number;
+}
+
+export default class Profile extends Component<ProfileProps, ProfileState> {
+	private timer: number | undefined;
+
 	state = {
 		time: Date.now(),
 		count: 10
@@ -28,7 +39,7 @@ export default class Profile extends Component {
 	};
 
 	// Note: `user` comes from the URL, courtesy of our router
-	render({ user }, { time, count }) {
+	render({ user }: RenderableProps<ProfileProps>, { time, count }: ProfileState) {
 		return (
 			<div class={style.profile}>
 				<h1>Profile: {user}</h1>

@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
+import { Router, RouterOnChangeArgs } from 'preact-router';
 
 import Header from './header';
 import Home from '../routes/home';
@@ -7,16 +7,27 @@ import Profile from '../routes/profile';
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
+declare global {
+	interface Module {
+		hot: boolean;
+	}
+
+	function require(id: string): any;
+	const module: Module;
+}
+
 if (module.hot) {
 	require('preact/debug');
 }
 
 export default class App extends Component {
+	private currentUrl: string | undefined;
+
 	/** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
 	 */
-	handleRoute = e => {
+	handleRoute = (e: RouterOnChangeArgs) => {
 		this.currentUrl = e.url;
 	};
 
