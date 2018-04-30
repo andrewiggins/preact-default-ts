@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -12,7 +12,7 @@
     "types": [],
     "lib": [
       "dom",
-      "es2017"
+      "es5"
     ],
     "outDir": "./js/"
   },
