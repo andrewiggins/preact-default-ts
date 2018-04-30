@@ -14,7 +14,8 @@
       "dom",
       "es5"
     ],
-    "outDir": "./js/"
+    "outDir": "./js/",
+    "importHelpers": true
   },
   "include": [
     "./src/**/*.ts",

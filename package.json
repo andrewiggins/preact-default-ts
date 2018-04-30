@@ -25,7 +25,8 @@
     "jest": "^21.2.1",
     "preact-cli": "^2.1.0",
     "preact-cli-plugin-typescript": "wub/preact-cli-plugin-typescript",
-    "preact-render-spy": "^1.2.1"
+    "preact-render-spy": "^1.2.1",
+    "tslib": "^1.9.0"
   },
   "dependencies": {
     "preact": "^8.2.8",
