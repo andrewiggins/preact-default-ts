@@ -1,5 +1,5 @@
 import { h, Component, RenderableProps } from 'preact';
-import style from './style';
+import * as style from './style.css';
 
 export interface ProfileProps {
 	user?: string;
